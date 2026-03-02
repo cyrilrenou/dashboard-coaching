@@ -33,6 +33,9 @@ async function queryAll(database_id: string, sorts: any[]) {
   return results
 }
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export async function GET() {
   try {
     const coachPages = await queryAll(COACH_DB, [{ property: 'Date de la réunion', direction: 'ascending' }])
